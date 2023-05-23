@@ -1,32 +1,35 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="hr">
-                    <li class="nav-item">
-                        <router-link class="nav-link "  to="/">Home</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link class="nav-link "  to="/dgr_period">Dgr_period</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link class="nav-link "  to="/tw_block">Tw_block</router-link>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                </span>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <router-link class="navbar-brand"  to="/">Home</router-link>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <router-link class="nav-link "  to="/dgr_period">Dgr_period</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link "  to="/tw_block">Tw_block</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link "  to="/twfy">Twfy</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link "  to="/create_twfy">Create Twfy</router-link>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
 </template>
 
 <script>
+
     export default{
-        name:'nav-bar'
+        name:'nav-bar',
     }
 </script>
 
-<style>
+<!-- <style>
    ul.hr {
     margin: 0; /* Обнуляем значение отступов */
     padding: 4px; /* Значение полей */
@@ -36,4 +39,4 @@
     margin-right: 5px; /* Отступ слева */
     padding: 3px; /* Поля вокруг текста */
    }
-  </style>
+  </style> -->

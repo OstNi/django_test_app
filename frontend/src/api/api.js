@@ -19,32 +19,31 @@ export function toURLParams(filters){
             params.append(f,filters[f]['id'])
 
         }else{
-                if (filters[f] !=undefined){
-            params.append(f,filters[f]);
-                }
-
+            if (filters[f] !=undefined){
+                params.append(f,filters[f]);
+            }
         }
     }
     return params
 }
 
-async function _save(url,obj){
+async function _save(url, obj, id){
     let response 
-    if (obj.id){
-         response = await axios.patch(url+obj.id+'/',obj)
+    if (id){
+        response = await axios.patch(url+obj.id+'/',obj)
     }else{
-         response = await axios.post(url,obj)
+        response = await axios.post(url,obj)
     }
     
     return response.data
 }
   
-async function _delete(url,obj){
+async function _delete(url, obj, id){
     let response 
-    if (obj.id){
-         response = await axios.delete(url+obj.id+'/',obj)
+    if (obj && id){
+        response = await axios.delete(url+id+'/',obj)
+        console.log(response)
     }
-
     return response
 }
     
@@ -63,17 +62,17 @@ async function _getById(url,id){
 function apiConstructor(apiUrl){
 
     let objects= {
-        async save(obj){
-            return _save(apiUrl,obj)
+        async save(obj, id){
+            return _save(apiUrl,obj, id)
         },
-        async get(obj){
-            return _getById(apiUrl,obj)
+        async get(obj, id){
+            return _getById(apiUrl,obj, id)
         },
         async filter(filter){
             return _filter(apiUrl,filter)
         },
-        async delete(obj){
-            return _delete(apiUrl,obj)
+        async delete(obj, id){
+            return _delete(apiUrl,obj, id)
         },
     }
     return {

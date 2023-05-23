@@ -18,7 +18,20 @@ const routes = [
       path: '/tw_block',
       name: 'tw_block',
       component: () => import(/* webpackChunkName: "about" */ '../views/TwblockView')
+    },
+
+    {
+      path: '/twfy',
+      name: 'twfy',
+      component: () => import(/* webpackChunkName: "about" */ '../views/TwfyView')
+    },
+
+    {
+      path: '/create_twfy',
+      name: 'create_twfy',
+      component: () => import(/* webpackChunkName: "about" */ '../views/CreatetwfyView')
     }
+
 
 
   ]

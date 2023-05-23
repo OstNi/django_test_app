@@ -1,25 +1,24 @@
 <template>
-  <div class = "dgr">
-    <div class = "dgr-container">
-      <table class = "dgr-data">
-        <tr>
-          <th>DGR_ID</th>
-          <th>TPD_ID</th>
-          <th>VER_ID</th>
-          <th>SGR_ID</th>
-          <th>TYP_ID</th>
-          <th>DIV_ID</th>
-        </tr>
-        <tr v-for="dgr in dgr_list" :key="dgr.dgp_id">
-          <td>{{dgr.dgp_id}}</td>
-          <td>{{dgr.tch_tch}}</td>
-          <td>{{dgr.ver_ver}}</td>
-          <td>{{dgr.sgr_sgr}}</td>
-          <td>{{dgr.typ_typ}}</td>
-          <td>{{dgr.div_div}}</td>
-        </tr>
-      </table>
-    </div>
+  <h1>DgrPeriod page</h1>
+  <div class = "container">
+    <table class = "table table-striped-columns">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">TPD_ID</th>
+        <th scope="col">VER_ID</th>
+        <th scope="col">SGR_ID</th>
+        <th scope="col">TYP_ID</th>
+        <th scope="col">DIV_ID</th>
+      </tr>
+      <tr v-for="dgr in dgr_list" :key="dgr.dgp_id">
+        <td>{{dgr.dgp_id}}</td>
+        <td>{{dgr.tch_tch}}</td>
+        <td>{{dgr.ver_ver}}</td>
+        <td>{{dgr.sgr_sgr}}</td>
+        <td>{{dgr.typ_typ}}</td>
+        <td>{{dgr.div_div}}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
