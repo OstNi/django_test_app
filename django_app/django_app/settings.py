@@ -20,6 +20,8 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+LOGIN_REDIRECT_URL = 'http://localhost:8080/'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -43,8 +45,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "sub_app.apps.SubAppConfig",
-    "rest_framework"
-
+    "rest_framework",
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -55,6 +57,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = "django_app.urls"
@@ -134,7 +137,13 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8080', 'http://localhost:8000']
+CSRF_COOKIE_DOMAIN = 'localhost'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ORIGIN_ALLOW_ALL = True
