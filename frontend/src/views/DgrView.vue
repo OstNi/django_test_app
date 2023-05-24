@@ -14,7 +14,7 @@ import DgrComponent from "@/components/DgrComponent.vue"
         },
 
         components:{
-        DgrComponent
+            DgrComponent
         }
     }
 </script>

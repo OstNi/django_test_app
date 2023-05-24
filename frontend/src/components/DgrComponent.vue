@@ -4,19 +4,19 @@
     <table class = "table table-striped-columns">
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">TPD_ID</th>
-        <th scope="col">VER_ID</th>
-        <th scope="col">SGR_ID</th>
-        <th scope="col">TYP_ID</th>
-        <th scope="col">DIV_ID</th>
+        <th scope="col">TPR_CHAPTER</th>
+        <th scope="col">STU_GROUP</th>
+        <th scope="col">TY_PERIOD</th>
+        <th scope="col">DIVISION</th>
+        <th scope="col">VERSION_ID</th>
       </tr>
       <tr v-for="dgr in dgr_list" :key="dgr.dgp_id">
         <td>{{dgr.dgp_id}}</td>
-        <td>{{dgr.tch_tch}}</td>
+        <td>{{dgr.tch_tch.name}}</td>
+        <td>{{dgr.sgr_sgr.name}}</td>
+        <td>{{dgr.typ_typ.typ_id}}</td>
+        <td>{{dgr.div_div.name}}</td>
         <td>{{dgr.ver_ver}}</td>
-        <td>{{dgr.sgr_sgr}}</td>
-        <td>{{dgr.typ_typ}}</td>
-        <td>{{dgr.div_div}}</td>
       </tr>
     </table>
   </div>

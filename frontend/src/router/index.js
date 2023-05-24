@@ -27,11 +27,10 @@ const routes = [
     },
 
     {
-      path: '/create_twfy',
-      name: 'create_twfy',
-      component: () => import(/* webpackChunkName: "about" */ '../views/CreatetwfyView')
+      path: '/create_dgr',
+      name: 'create_dgr',
+      component: () => import(/* webpackChunkName: "about" */ '../views/DgrCreate')
     }
-
 
 
   ]

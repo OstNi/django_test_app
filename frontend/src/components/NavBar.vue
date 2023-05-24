@@ -14,7 +14,7 @@
                     <router-link class="nav-link "  to="/twfy">Twfy</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link "  to="/create_twfy">Create Twfy</router-link>
+                    <router-link class="nav-link "  to="/create_dgr">Create Dgr</router-link>
                 </li>
             </ul>
             </div>
