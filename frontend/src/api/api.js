@@ -2,6 +2,13 @@ const  DgrPeriodmUrl = '/api/dgr_periods/'
 const  TimeRuleUrl = '/api/time_rules/'
 const  TwBlockUrl = '/api/tw_blocks/'
 const  TwForYearUrl = '/api/tw_for_years/'
+const  GroupWorkUrl = '/api/group_works/'
+const  DivisionUrl = '/api/divisions/'
+const  TprChapterUrl = '/api/tpr_chapters/'
+const  WorkTypeUrl = '/api/work_types/'
+const  TyPeriodUrl = '/api/ty_periods/'
+const  StuGroupUrl = '/api/stu_groups/'
+
 
 import axios from "axios"
 
@@ -27,6 +34,7 @@ export function toURLParams(filters){
     return params
 }
 
+
 async function _save(url, obj, id){
     let response 
     if (id){
@@ -38,6 +46,7 @@ async function _save(url, obj, id){
     return response.data
 }
   
+
 async function _delete(url, obj, id){
     let response 
     if (obj && id){
@@ -46,18 +55,19 @@ async function _delete(url, obj, id){
     }
     return response
 }
-    
+   
+
 async function _filter(url,filter){
     const response = await axios.get(url+'?'+toURLParams(filter))
     return response.data
 }
+
 
 async function _getById(url,id){
     const response = await axios.get(url+id+'/')
     return response.data
 }
                       
-
 
 function apiConstructor(apiUrl){
 
@@ -86,3 +96,9 @@ export let DgrPeriod = apiConstructor(DgrPeriodmUrl)
 export let TimeRule = apiConstructor(TimeRuleUrl)
 export let TwBlock = apiConstructor(TwBlockUrl)
 export let TwForYear = apiConstructor(TwForYearUrl)
+export let GroupWork = apiConstructor(GroupWorkUrl)
+export let TprChapter = apiConstructor(TprChapterUrl)
+export let TyPeriod = apiConstructor(TyPeriodUrl)
+export let WorkType = apiConstructor(WorkTypeUrl)
+export let Division = apiConstructor(DivisionUrl)
+export let StuGroup = apiConstructor(StuGroupUrl)
