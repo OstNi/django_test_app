@@ -15,23 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from rest_framework import routers
-from sub_app.api.views import DgrPeriodsViewSet
-from sub_app.api.views import TimeRulesViewSet
-from sub_app.api.views import TwBlocksViewSet
-from sub_app.api.views import TwForYearsViewSet
-
-
-# api route
-router = routers.DefaultRouter()
-router.register(r'dgr_periods', DgrPeriodsViewSet,  basename='DgrPeriods')
-router.register(r'time_rules', TimeRulesViewSet, basename='TimeRules')
-router.register(r'tw_blocks', TwBlocksViewSet, basename='TwBlocks')
-router.register(r'tw_for_years', TwForYearsViewSet, basename='TwForYears')
+from sub_app.api.urls import urlpatterns
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(router.urls)),
+    path("", include(urlpatterns)),
 ]
