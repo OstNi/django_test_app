@@ -46,7 +46,8 @@ INSTALLED_APPS = [
 
     "sub_app.apps.SubAppConfig",
     "rest_framework",
-    'corsheaders'
+    'corsheaders',
+    "django_filters"
 ]
 
 MIDDLEWARE = [
@@ -95,16 +96,16 @@ DATABASES = {
     }
 }
 
-#
-#
-# REST_FRAMEWORK = {
-#     # Use Django's standard `django.contrib.auth` permissions,
-#     # or allow read-only access for unauthenticated users.
-#     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#     ]
-# }
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    # ]
+}
 
 
 # Password validation
