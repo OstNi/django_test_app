@@ -11,6 +11,7 @@ from sub_app.api.views import DivisionViewSet
 from sub_app.api.views import WorkTypeViewSet
 from sub_app.api.views import TyPeriodViewSet
 from sub_app.api.views import TprChapterViewSet
+from sub_app.api.views import VersionViewSet
 
 
 
@@ -26,6 +27,7 @@ router.register(r'divisions', DivisionViewSet, basename='Divisions')
 router.register(r'tpr_chapters', TprChapterViewSet, basename='TprChapters')
 router.register(r'work_types', WorkTypeViewSet, basename='WorkTypes')
 router.register(r'ty_periods', TyPeriodViewSet, basename='TyPeriods')
+router.register(r'versions', VersionViewSet, basename='Versions')
 
 
 urlpatterns = [
