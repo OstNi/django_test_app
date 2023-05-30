@@ -1,4 +1,5 @@
 <template>
+    <div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <router-link class="navbar-brand"  to="/">Home</router-link>
@@ -7,19 +8,11 @@
                 <li class="nav-item">
                     <router-link class="nav-link "  to="/dgr_period">Dgr_period</router-link>
                 </li>
-                <li class="nav-item">
-                    <router-link class="nav-link "  to="/tw_block">Tw_block</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link class="nav-link "  to="/twfy">Twfy</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link class="nav-link "  to="/create_dgr">Create Dgr</router-link>
-                </li>
             </ul>
             </div>
         </div>
     </nav>
+    </div>
 </template>
 
 <script>
