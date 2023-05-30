@@ -19,7 +19,7 @@ class DgrPeriods(models.Model):
     class Meta:
         managed = False
         db_table = 'dgr_periods'
-        unique_together = (('div_div', 'sgr_sgr', 'tch_tch', 'typ_typ', 'ver_ver'),)
+        unique_together = (('div_div', 'sgr_sgr', 'typ_typ', 'ver_ver'),)
 
 
 class Disciplines(models.Model):

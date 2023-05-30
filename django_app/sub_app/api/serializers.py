@@ -10,6 +10,13 @@ from sub_app.models import WorkTypes
 from sub_app.models import TyPeriods
 from sub_app.models import Divisions
 from sub_app.models import TprChapters
+from sub_app.models import Versions
+
+
+class VersionsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Versions
+        fields = ["ver_id", "info"]
 
 
 class DivisionSerializer(serializers.ModelSerializer):
@@ -42,8 +49,8 @@ class StuGroupSerializer(serializers.ModelSerializer):
 
 
 class GroupWorkSerializer(serializers.ModelSerializer):
-    sgr_sgr = StuGroupSerializer()
-    wt_wot = WorkTypeSerializer()
+    sgr_sgr = serializers.SlugRelatedField(many=False, read_only=True, slug_field='name')
+    wt_wot = serializers.SlugRelatedField(many=False, read_only=True, slug_field='name')
     class Meta:
         model = GroupWorks
         fields = "__all__"
@@ -68,10 +75,8 @@ class TwBlockSerializer(serializers.ModelSerializer):
 
 
 class DgrPeriodSerializer(serializers.ModelSerializer):
-    tch_tch = TprChapterSerializer()
-    sgr_sgr = StuGroupSerializer()
-    typ_typ = TyperiodSerializer()
-    div_div = DivisionSerializer()
+
     class Meta:
         model = DgrPeriods
         fields = "__all__"
+        depth = 1

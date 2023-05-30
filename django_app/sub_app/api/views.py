@@ -10,13 +10,14 @@ from sub_app.api.serializers import DivisionSerializer
 from sub_app.api.serializers import TprChapterSerializer
 from sub_app.api.serializers import TyperiodSerializer
 from sub_app.api.serializers import WorkTypeSerializer
-
+from sub_app.api.serializers import VersionsSerializer
 
 from sub_app.api.filtersets import StuGroupFilterSet
 from sub_app.api.filtersets import DivisionFilterSet
 from sub_app.api.filtersets import TprChapterFilterSet
 from sub_app.api.filtersets import WorkTypeFilterSet
-
+from sub_app.api.filtersets import TyPeriodFilterSet
+from sub_app.api.filtersets import VersionFilterSet
 
 from sub_app.models import TimeRules
 from sub_app.models import TwForYears
@@ -28,7 +29,13 @@ from sub_app.models import WorkTypes
 from sub_app.models import TyPeriods
 from sub_app.models import Divisions
 from sub_app.models import TprChapters
+from sub_app.models import Versions
 
+
+class VersionViewSet(viewsets.ModelViewSet):
+    queryset = Versions.objects.all()
+    serializer_class = VersionsSerializer
+    filterset_class = VersionFilterSet
 
 
 class StuGroupViewSet(viewsets.ModelViewSet):
@@ -52,6 +59,7 @@ class WorkTypeViewSet(viewsets.ModelViewSet):
 class TyPeriodViewSet(viewsets.ModelViewSet):
     queryset = TyPeriods.objects.all()
     serializer_class = TyperiodSerializer
+    filterset_class = TyPeriodFilterSet
 
 
 class TprChapterViewSet(viewsets.ModelViewSet):
