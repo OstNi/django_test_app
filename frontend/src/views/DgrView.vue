@@ -1,9 +1,15 @@
 <template>
-    <dgr-component/>
+    <div class = "container">
+        <h1>Dgr Page</h1>
+        <div class="container options">
+            <button @click="toCreate" type="button" class="btn btn-primary">Create</button>
+        </div>
+        <dgr-data/>
+    </div>
 </template>
 
 <script>
-import DgrComponent from "@/components/DgrComponent.vue"
+import DgrData from "@/components/DgrData.vue"
 
     export default{
         name:'dgr-app',
@@ -13,8 +19,14 @@ import DgrComponent from "@/components/DgrComponent.vue"
             }
         },
 
+        methods:{
+            toCreate(){
+                this.$router.push({name:'dgr_create'})
+            }
+        },
+
         components:{
-            DgrComponent
+            DgrData
         }
     }
 </script>
