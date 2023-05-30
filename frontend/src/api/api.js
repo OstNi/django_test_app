@@ -8,6 +8,7 @@ const  TprChapterUrl = '/api/tpr_chapters/'
 const  WorkTypeUrl = '/api/work_types/'
 const  TyPeriodUrl = '/api/ty_periods/'
 const  StuGroupUrl = '/api/stu_groups/'
+const  VersionUrl = '/api/versions/'
 
 
 import axios from "axios"
@@ -38,11 +39,12 @@ export function toURLParams(filters){
 async function _save(url, obj, id){
     let response 
     if (id){
+        console.log('_save id:',url, obj)
         response = await axios.patch(url+obj.id+'/',obj)
     }else{
+        console.log('_save not id:',url, obj)
         response = await axios.post(url,obj)
     }
-    
     return response.data
 }
   
@@ -73,6 +75,7 @@ function apiConstructor(apiUrl){
 
     let objects= {
         async save(obj, id){
+            console.log('save', obj, id)
             return _save(apiUrl,obj, id)
         },
         async get(obj, id){
@@ -102,3 +105,4 @@ export let TyPeriod = apiConstructor(TyPeriodUrl)
 export let WorkType = apiConstructor(WorkTypeUrl)
 export let Division = apiConstructor(DivisionUrl)
 export let StuGroup = apiConstructor(StuGroupUrl)
+export let Version = apiConstructor(VersionUrl)

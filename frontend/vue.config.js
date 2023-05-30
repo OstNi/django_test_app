@@ -3,6 +3,8 @@ module.exports = defineConfig({
   transpileDependencies: true
 })
 
+module. exports = { lintOnSave: false }
+
 const webpack = require('webpack')
 module.exports = defineConfig({
   transpileDependencies : true,
