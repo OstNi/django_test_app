@@ -15,9 +15,9 @@ const routes = [
   },
 
   {
-    path: '/dgr_create',
-    name: 'dgr_create',
-    component: () => import('../views/DgrCreate')
+    path: '/stu_create',
+    name: 'stu_create',
+    component: () => import('../views/StuStructCreate')
   },
 ]
 

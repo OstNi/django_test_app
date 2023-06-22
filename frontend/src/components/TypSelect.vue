@@ -38,8 +38,8 @@ export default{
             return false
         },
 
-        selectTyp(typ_id){
-            this.$emit('setTyp', typ_id)
+        selectTyp(typ){
+            this.$emit('setTyp', typ)
         },
 
         setNull(){
@@ -52,7 +52,7 @@ export default{
         curr_typ_id(newValue){
             if (newValue != null){
                 if (this._cheak(newValue.typ_id)){
-                    this.selectTyp(newValue.typ_id)
+                    this.selectTyp(newValue)
                 }
             }
             else{

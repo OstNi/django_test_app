@@ -38,8 +38,8 @@ export default{
            return false
        },
 
-       selectDiv(div_id){
-           this.$emit('setDiv', div_id)
+       selectDiv(div){
+           this.$emit('setDiv', div)
        },
 
        setNull(){
@@ -51,7 +51,7 @@ export default{
         cur_div(newValue){
             if (newValue != null){
                 if (this._cheak(newValue.name)){
-                    this.selectDiv(newValue.div_id)
+                    this.selectDiv(newValue)
                 }
 
             }else{

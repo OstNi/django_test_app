@@ -1,0 +1,2 @@
+class DgrCreateExc(Exception):
+    pass

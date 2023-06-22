@@ -8,6 +8,9 @@
                 <li class="nav-item">
                     <router-link class="nav-link "  to="/dgr_period">Dgr_period</router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link class="nav-link "  to="/stu_create">Create Stu_Group</router-link>
+                </li>
             </ul>
             </div>
         </div>

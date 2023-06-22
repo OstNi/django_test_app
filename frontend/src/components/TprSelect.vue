@@ -38,8 +38,8 @@ export default{
             return false
         },
 
-        selectTch(tch_id){
-            this.$emit('setTpr', tch_id)
+        selectTch(tpr){
+            this.$emit('setTpr', tpr)
         },
 
         setNull(){
@@ -51,7 +51,7 @@ export default{
         cur_tpr(newValue){
             if (newValue != null){
                 if (this._cheak(newValue.name)){
-                    this.selectTch(newValue.tch_id)
+                    this.selectTch(newValue)
                 }
             }else{
                 this.setNull()

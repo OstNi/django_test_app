@@ -40,8 +40,8 @@ export default{
             return false
         },
 
-        selectSgr(sgr_id){
-            this.$emit('setSgr', sgr_id)
+        selectSgr(stu){
+            this.$emit('setSgr', stu)
         },
 
         setNull(){
@@ -53,7 +53,7 @@ export default{
         cur_sgr(newValue){
             if (newValue != null){
                 if (this._cheak(newValue.name)){
-                    this.selectSgr(newValue.sgr_id)
+                    this.selectSgr(newValue)
                 }
             }else{
                 this.setNull()

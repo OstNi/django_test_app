@@ -1,9 +1,6 @@
 <template>
     <div class = "container">
         <h1>Dgr Page</h1>
-        <div class="container options">
-            <button @click="toCreate" type="button" class="btn btn-primary">Create</button>
-        </div>
         <dgr-data/>
     </div>
 </template>
@@ -18,13 +15,6 @@ import DgrData from "@/components/DgrData.vue"
                 app:{},
             }
         },
-
-        methods:{
-            toCreate(){
-                this.$router.push({name:'dgr_create'})
-            }
-        },
-
         components:{
             DgrData
         }

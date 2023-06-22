@@ -39,8 +39,8 @@ export default{
             return false
         },
 
-        selectVer(ver_id){
-            this.$emit('setVer', ver_id)
+        selectVer(ver){
+            this.$emit('setVer', ver)
         },
 
         setNull(){
@@ -52,7 +52,7 @@ export default{
         cur_ver(newValue){
             if (newValue != null){
                 if (this._cheak(newValue.info)){
-                    this.selectVer(newValue.ver_id)
+                    this.selectVer(newValue)
                 }
             }else{
                 this.setNull()
